@@ -1,3 +1,4 @@
+# Script created with the helpf of Robrecht Cannoodt
 library(tidyverse)
 library(dyngen)
 
