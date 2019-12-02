@@ -14,5 +14,5 @@ The truth now includes the direct regulatory interactions as well as Level 1 and
 The truth here includes the direct regulatory interactions as well as all indirect interactions between genes caused through the direct interactions. 
 ![](figures/Dyngen_PR_with_All_InDirectEdges.png)<!-- -->
 ## Expression trends of genes with direct and indirect interactions
-The figure shows 
+The figure shows the expression trends of three genes, and illustrates how the expression trend alone seems insufficient to distinguish between direct and indirect edges on the dyngen dataset.
 ![](figures/Dyngen_Gene_Expression.png)<!-- -->
