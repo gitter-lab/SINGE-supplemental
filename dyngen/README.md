@@ -2,6 +2,7 @@ We generated a simulated dataset using dyngen, with the help of the script gener
 
 ## SINGE analysis on the dyngen dataset
 We run SINGE on X_Dyngen.mat using the command
+
 `bash SINGE.sh PATH_TO_RUNTIME GLG data/X_Dyngen.mat data/gene_list.mat Output default_hyperparameters.txt 2`
 
 ## Results
