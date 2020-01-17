@@ -6,7 +6,7 @@ This dataset is saved in `data/X_Dyngen.mat`.
 ## SINGE analysis on the dyngen dataset
 We run SINGE on `X_Dyngen.mat` using the command
 
-`bash SINGE.sh PATH_TO_RUNTIME GLG data/X_Dyngen.mat data/gene_list.mat Output default_hyperparameters.txt 2`
+`bash SINGE.sh PATH_TO_RUNTIME standalone data/X_Dyngen.mat data/gene_list.mat Output default_hyperparameters.txt`
 
 For more detailed notes on SINGE command and usage, please refer to https://github.com/gitter-lab/SINGE/
 
