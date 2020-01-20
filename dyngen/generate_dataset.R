@@ -1,9 +1,11 @@
-# Script created with the help of Robrecht Cannoodt
+# Script created with the help of Robrecht Cannoodt. 
 library(tidyverse)
+# The dyngen package is from commit https://github.com/dynverse/dyngen/commit/73192c82f39e1b4318aea56d4c87ed02c1bf145e
 library(dyngen)
 
+
 # I start off with few TFs, few targets, and 
-# no housekeeping genes
+# a few housekeeping genes
 num_cells <- 1000
 num_tfs <- 25
 num_targets <- 100
