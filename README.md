@@ -65,7 +65,7 @@ We use only the ordering information in Jump3 with the assigned obsTimes increas
 ```
 w = jump3(data,obsTimes,noiseVar,tfidx,K,ntrees)
 ```
-We used `noiseVar.obsnoise=0.1`, `K = 100`, `ntrees = 100`, and replicate the default values from Jump3's example in their github repository for the other variables.
+We used `noiseVar.obsnoise=0.1`, `K = 100`, `ntrees = 100`, and replicate the default values from Jump3's example in its GitHub repository for the other variables.
 
 ## GENIE3
 We installed GENIE3 version 1.6.0 from the BioConductor page \url{https://bioconductor.org/packages/release/bioc/html/GENIE3.html} and used its default operating mode without any modifications.
