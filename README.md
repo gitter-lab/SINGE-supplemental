@@ -7,6 +7,7 @@ Atul Deshpande, Li-Fang Chu, Ron Stewart, Anthony Gitter.
 
 See the main [SINGE repository](https://github.com/gitter-lab/SINGE) for the software.
 
+# Usage documentation of SINGE and other network inference methods in the paper
 For network inference from the different methods, we use the following commands:
 
 ## SINGE
