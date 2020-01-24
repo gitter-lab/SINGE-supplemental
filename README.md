@@ -65,7 +65,7 @@ ruby run_R.rb <Input_file1> <Input_file2> <Output_dir> <G> <D> <C> <I> <R>
 
 
 ### Jump3
-We parallelize the Jump3 implementation to speed up the processing time using high-throughput computing. An equivalent version of the Jump3 code we used can be obtained from \url{https://github.com/vahuynh/Jump3} (git commit 03a7e86d82f2383c56fd11c658dfce574fbf1a1a).
+We parallelize the Jump3 implementation to speed up the processing time using high-throughput computing. An equivalent version of the Jump3 code we used can be obtained from https://github.com/vahuynh/Jump3 (git commit 03a7e86d82f2383c56fd11c658dfce574fbf1a1a).
 Because Jump3 did not terminate in a reasonable amount of time on the full Retinoic Acid-driven Differentiation dataset, we reduced the dataset by arbitrarily dropping cells with probability 0.5.
 We use only the ordering information in Jump3 with the assigned obsTimes increasing from 0 to `C-1` from the earliest cell to the latest cell, where `C` is the number of cells in the dataset. 
 ```
