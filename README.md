@@ -1,4 +1,7 @@
 # SINGE supplemental information
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3627325.svg)](https://doi.org/10.5281/zenodo.3627325)
+
 This repository contains supplemental scripts and analyses for the SINGE manuscript:
 
 Atul Deshpande, Li-Fang Chu, Ron Stewart, Anthony Gitter.
