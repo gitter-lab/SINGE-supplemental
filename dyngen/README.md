@@ -8,12 +8,12 @@ We run SINGE on `X_Dyngen.mat` using the command
 
 `bash SINGE.sh PATH_TO_RUNTIME standalone data/X_Dyngen.mat data/gene_list.mat Output default_hyperparameters.txt`
 
-For more detailed notes on SINGE command and usage, please refer to https://github.com/gitter-lab/SINGE/
+For more detailed notes on the SINGE command and usage, please refer to https://github.com/gitter-lab/SINGE/
 
 ## Results
 The figures below show the precision-recall performance of inferred networks from SINGE, SCODE, Jump3, SINCERITIES, and GENIE3 with respect to the truth provided by the dyngen model. These figures show that the performance of SINGE improves when evaluating with respect to a gold standard representing both direct and indirect interactions between genes.
 
-The final figure compares the expression trends of an example direct and "indirect" edge.
+The final figure compares the expression trends of an example direct and indirect edge.
 Based on expression trends alone, it is difficult for these methods to distinguish direct from indirect edges in the dyngen dataset.
 
 ### Precision-recall performance with direct gene interactions
