@@ -33,13 +33,52 @@ Finally, we added a [supplemental GitHub repository](https://github.com/gitter-l
 
 > It appears that the proposed method (and perhaps other methods in the field) assume that cells move independently through a trajectory of states. Specifically, for a given cell at pseudotime t, cells measured at pseudotimes < t are assumed to provide information about the previous levels of gene expression in the given cell. This seems to ignore the potential of cell-cell signaling to affect gene expression. In the case of transcription factors this would necessarily occur indirectly.
 
+The stated assumption is correct and is a potential limitation of SINGE and other related algorithms.
+We designed SINGE to use the kernel-based Generalized Lasso Granger (GLG) test in part to address this limitation.
+SINGE assumes that the smoothed, averaged expression states of cells measured at pseudotimes < t are predictive of the expression state of a cell a pseudotime t.
+Averaging over stochastic expression variation and differences in cell state due to cell-to-cell signaling and other factors is intended to improve our ability to recover meaningful expression dependencies.
+
+We added a reference to and brief discussion of an excellent [review](https://doi.org/10.1016/j.bbagrm.2016.08.007) to raise awareness of these and other biological mechanisms affecting transcription dynamics that SINGE does not model.
+In addition, we also refer to the [SCRIBE manuscript](https://doi.org/10.1101/426981), which explores these assumptions in greater detail.
+
 > The performance assessments of SCINGE and the comparisons with other methods are carried out on two experimental data sets in which the “truth” is assumed to be at least partially known. However, as the authors note, in such situations the “truth” is likely incomplete and perhaps even incorrect at times. In addition to evaluating the methods on these data sets, it would be interesting to simulate data for which the truth is actually known.
 
+We added an evaluation using the [dyngen](https://github.com/dynverse/dyngen) simulator.
+The dyngen data and results are available in this [supplemental repository](https://github.com/gitter-lab/SINGE-supplemental/tree/master/dyngen).
+The dyngen package simulates a gene regulatory network and generates single-cell gene expression data from that network.
+We used SINGE and existing methods to predict networks from that simulated data and compared them to the simulated ground truth.
+
+Almost all methods we assessed in this manner have close to random performance on the simulated dyngen network, with Jump3 being the only exception.
+After examining the simulated expression data in more detail, we noticed that the expression profiles ([example](https://github.com/gitter-lab/SINGE-supplemental/tree/master/dyngen#expression-trends-of-genes-with-direct-and-indirect-interactions)) of direct target genes and downstream indirect targets were quite similar.
+This contributes to SINGE's poor performance.
+If we evaluate SINGE against a modified gold standard network that includes direct and indirect transitive relationships, its relative performance improves greatly, surpassing Jump3 and the random baseline.
+
+In practice, this suggests that SINGE may also struggle to distinguish direct from indirect regulatory relationships in real single-cell RNA-seq data.
+Therefore, we expanded our discussion of how SINGE could be extended to use prior information about transcription factor binding to prioritize direct interactions.
+
 > The performance assessments were all based on the presence / absence of edges. This is necessitated by the information used as a gold standard for the experimental data. However, I was left wondering whether the estimated model parameters, e.g. the a_{i,j}(l), are meaningful? This is something that would be interesting to explore via simulations in which one could assess the ability to estimate these parameters.
+
+We do not expect that the estimated model parameters are meaningful.
+In fact, SINGE's ensembling approach is in part motivated by our distrust of the model parameters from any individual GLG test with a fixed set of hyperparameters.
+We rewrote our presentation of the expression data subsampling and modified Borda count ensembling to clarify why we use a rank-based aggregation that does not consider the magnitudes of the model parameters.
 
 > Minor Comments:
 
 > I found the subsampling procedure to be poorly motivated and somewhat difficult to interpret. The authors note some similarity to bagging, but do not provide a reference for the proposed procedure (nor any theoretical justification for its use). I got the (perhaps incorrect) impression that it was being used as a type of sensitivity analysis without being explicitly framed in that way. Some additional clarification on this procedure would be helpful.?
+
+We completely rewrote the sections about expression data subsampling and modified Borda count ensembling.
+We contrast the subsampling strategy we implemented in SINGE with another simpler strategy that removes entire cells from the single-cell dataset.
+In addition, we place the Borda count aggregation in the context of other alternative approaches for unsupervised model aggregation, stability selection, and false discovery rate estimation in gene regulatory network inference.
+We added a reference that includes a [theoretical discussion](https://doi.org/10.1080/10361146.2014.900530) of the Borda count and its modifications in political science, where the scoring rule applied to ranked votes is known to affect the winner of an election.
+This weighted rank-based voting is the inspiration for SINGE's ensembling.
+
+The subsampling and aggregation is designed to improve the robustness of the predicted edge ranking.
+Like traditional bagging, rerunning GLG tests on different subsamples of the data can help ensure the predicted regulatory interactions are not artifacts of atypical expression states of outlier cells.
+Aggregating across different hyperparameter combinations guards against predicted regulatory interactions that are not resilient to minor differences in the regression sparsity or pseudotemporal lags.
+
+The subsampling is not necessarily a sensitivity analysis.
+However, we did add new supplemental figures showing the sensitivity of GLG tests for different hyperparameter values.
+The test is most sensitive to the value of the regression sparsity hyperparameter lambda.
 
 ## Reviewer 2
 
