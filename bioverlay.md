@@ -1,5 +1,30 @@
 # Response to biOverlay reviews
 
+We thank the biOverlay editor and reviewers for selecting the SINGE [*bioRxiv preprint*](https://doi.org/10.1101/534834) for review and for their helpful feedback.
+We sought to address many of these comments while revising our manuscript.
+Others we deferred for our future studies of gene regulatory network inference from single-cell RNA-seq.
+Note that the software has been renamed from SCINGE to **SINGE** per a reviewer request.
+
+Before responding to the biOverlay reviews, we summarize other notable changes to the manuscript and [SINGE software](https://github.com/gitter-lab/SINGE) since our initial submission that were motivated by journal reviewers and recent related literature:
+-	Showed how to use the [dynverse](https://dynverse.org/) framework for benchmarking trajectory inference algorithms so that SINGE users can select the optimal type of pseudotimes for new single-cell RNA-seq datasets
+-	Demonstrated SINGE's general applicability with multiple types of pseudotimes by running it with Monocle, Monocle 2, Embeddr, PAGA Tree, and simulated dyngen pseudotimes
+- Added evidence that higher quality PAGA Tree pseudotimes lead to higher quality SINGE networks on the same expression data
+-	Tested SINGE and other gene regulatory network methods with the [dyngen](https://github.com/dynverse/dyngen) simulator
+-	Added GENIE3 to our evaluations to show SINGE’s use of single-cell pseudotimes does improve network inference performance
+-	Predicted a gene regulatory network from a Mouse Cell Atlas bone marrow dataset to show SINGE's generality and scalability
+
+In addition, we observed independent groups launching single-cell network inference benchmarking efforts, such as [BEELINE](http://doi.org/10.1038/s41592-019-0690-6) and [SERGIO](https://doi.org/10.1101/716811).
+To better support third-party benchmarking and adoption - including making it easier to run SINGE's full ensembling technique - we made extensive updates to the SINGE software.
+These improve the scalability, usability, and reliability:
+-	[Docker](https://hub.docker.com/r/agitter/singe) support so that MATLAB is not required
+-	Modularization of the algorithm so that it can be run on a distributed computing cluster on large datasets
+-	Optimizations that make inference up to 10 times faster
+- A formal test suite through [Travis CI](https://travis-ci.com/gitter-lab/SINGE) to ensure software correctness and stability
+-	Support for restricting the regulators to a predefined list of transcription factors
+
+More details are available at the [SINGE GitHub releases page](https://github.com/gitter-lab/SINGE/releases).
+Finally, we added a [supplemental GitHub repository](https://github.com/gitter-lab/SINGE-supplemental) with additional scripts and results to document our analyses.
+
 ## Reviewer 1
 
 > This paper reports the development of a new method (SCINGE) to infer gene regulatory networks (GRNs) from single cell gene expression data. The manuscript begins with a thorough but concise summary of the state of the field. In general the methodology was motivated by well-described biological and technical phenomena. The method itself is a combination of kernel-based Granger Causality regression and ensemble aggregation procedure. While most of the components of SCINGE are previously published methods, the proposed combination and application of these methods to GRN inference represents a substantial contribution to the field. The authors compare SCINGE to several other methods using two benchmark data sets in which the true regulatory relationships are at least partially known. Overall, the paper is clear, well written, and technically sound. The results are presented clearly and interpreted appropriately. Many of the questions that arose during my initial reading of this manuscript were subsequently addressed or acknowledged. This is a high-quality manuscript; however, I would suggest addressing the major and minor comments described below.
