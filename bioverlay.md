@@ -1,6 +1,6 @@
 # Response to biOverlay reviews
 
-We thank the biOverlay editor and reviewers for selecting the SINGE [*bioRxiv preprint*](https://doi.org/10.1101/534834) for review and for their helpful feedback.
+We thank the biOverlay editor and reviewers for selecting the SINGE [*bioRxiv* preprint](https://doi.org/10.1101/534834) for review and for their helpful feedback.
 We sought to address many of these comments while revising our manuscript.
 Others we deferred for our future studies of gene regulatory network inference from single-cell RNA-seq.
 Note that the software has been renamed from SCINGE to **SINGE** per a reviewer request.
@@ -114,7 +114,7 @@ We expanded our method section text about the lagged regulator coefficients and 
 > It may be that TF gene expression is not very predictive and the variability of TF average precision results reflect this. Are the TFs in the gold standard differentially expressed?
 
 We agree there are many examples showing that TF expression may not be predictive of target gene expression.
-We made this limitation more transparent by referencing a [review](https://doi.org/10.1016/j.bbagrm.2016.08.007) of transcription dynamics that discusses epigenomic modications, TF post-translational modications, TF localization, transcriptional co-factors, and other factors affecting transcription that are not reflected in TF expression.
+We made this limitation more transparent by referencing a [review](https://doi.org/10.1016/j.bbagrm.2016.08.007) of transcription dynamics that discusses epigenomic modifications, TF post-translational modifications, TF localization, transcriptional co-factors, and other factors affecting transcription that are not reflected in TF expression.
 We also note that approximating a TF's regulatory activity with its mRNA level is a simplifying assumption.
 
 For the major benchmarking analysis with the retinoic acid-driven differentiation expression data, all regulators are differentially expressed.
