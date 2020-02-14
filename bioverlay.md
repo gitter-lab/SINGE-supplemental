@@ -101,7 +101,7 @@ This is an excellent suggestion, but we have not yet explored the top and bottom
 
 We did use a cutoff of TFs that have 1000 genes with one or more peaks.
 The reviewer is correct that there are important TFs that would be excluded by this threshold.
-However, we set the higher threshold based on our inspection of individual experiments that has been compiled in the ESCAPE database.
+However, we set the higher threshold based on our inspection of individual experiments that have been compiled in the ESCAPE database.
 Some of those experiments that included a smaller number of target genes for the TF were not genome-wide in scope.
 Therefore, it would have been incorrect to assume that all genes not reported as targets of that TF in the limited-scale experiment were not in fact true targets.
 Setting the higher threshold of 1000 TF targets increases our confidence that all genes that are not reported can be treated as negative edges in the gold standard.
@@ -109,7 +109,7 @@ Setting the higher threshold of 1000 TF targets increases our confidence that al
 > It appears that SCINGE is capable of estimating TF->gene edges between pseudotime points. Why not take advantage of this time-dependent information? Are the estimates unreliable even after the ensembling?
 
 SINGE does take advantage of smoothed expression values that lie in between the observed pseudotimes.
-We expanded our method section text about the lagged regulator coefficients and added an example of lagged pseudotimes to highlight this.
+We expanded our Methods section text about the lagged regulator coefficients and added an example of lagged pseudotimes to highlight this.
 
 > It may be that TF gene expression is not very predictive and the variability of TF average precision results reflect this. Are the TFs in the gold standard differentially expressed?
 
@@ -125,7 +125,7 @@ We only included the 626 genes that significantly changed in expression along th
 We agree that this could be a source of error.
 In our Discussion section, we reference our prior work comparing ChIP data and TF loss of function experiments, which studied the low overlap between these two types of data.
 Our new analysis of the simulated dyngen gene expression data also suggests that SINGE's search for lagged gene expression dependencies may detect more indirect regulatory relationships than direct TF binding.
-SINGE performs poorly at recovery direct regulatory interactions in the dyngen network but it better at detecting direct or indirect interactions.
+SINGE performs poorly at recovering direct regulatory interactions in the dyngen network but is better at detecting direct or indirect interactions.
 
 We proposed that extending SINGE to incorporate epigenomic data as prior information could help improve its performance on the ChIP-based interactions and reference additional methods that integrate single-cell RNA-seq with such priors.
 However, even if a GRN method can be improved by integrating additional data types as a prior, there is still a need to discover the best way to uncover dependences from the expression data alone, which is the focus of our study.
@@ -146,8 +146,9 @@ Multiple copies of the coefficient represent how a regulator's influence is depe
 
 We replaced Figure 2 with a more straightforward example for this gene that makes it more transparent how the regulators were selected.
 We select a varying number of regulators by varying lambda, the sparsity hyperparameter in the GLG regression test.
-The updated figure also shows the mean squared error on the insample cells that were used to fit the regression coefficients and the outsample cells that were dropped during the subsampling and can be used to assess the fit.
-This indicates that the regression does not overfit at the highlighted sparsity levels.
+The updated figure also shows the mean squared error on the insample cells that were used to fit the regression coefficients and the outsample cells that were dropped during the subsampling.
+These held out outsample cells can be used to assess the fit.
+This indicates that the GLG regression does not overfit at the highlighted sparsity levels.
 
 > Page 7: Given that SCINGE is tuned to the Matsumoto et. al. data, how should we interpret the comparisons with other methods?
 
