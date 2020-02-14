@@ -1,6 +1,6 @@
-# Response to biOverlay reviews
+# Response to [biOverlay reviews](https://www.bioverlay.org/post/2019-04-scrnaseq-data-network-inference/)
 
-We thank the [biOverlay](https://www.bioverlay.org/post/2019-04-scrnaseq-data-network-inference/) editor and reviewers for selecting the SINGE [*bioRxiv* preprint](https://doi.org/10.1101/534834) for review and for their helpful feedback.
+We thank the biOverlay editor and reviewers for selecting the SINGE [*bioRxiv* preprint](https://doi.org/10.1101/534834) for review and for their helpful feedback.
 We sought to address many of these comments while revising our manuscript.
 Others we deferred for our future studies of gene regulatory network inference from single-cell RNA-seq.
 Note that the software has been renamed from SCINGE to **SINGE** per a reviewer request.
