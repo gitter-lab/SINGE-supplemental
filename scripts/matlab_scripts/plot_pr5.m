@@ -8,20 +8,25 @@ truth = truth - diag(diag(truth));
 [pre4,recall4,AUPRs(4),early_AUPRs(4)] = pr_fun(SCODE(ind,:),truth(ind,:),0.1);
 [pre5,recall5,AUPRs(5),early_AUPRs(5)] = pr_fun(Genie3(ind,:),truth(ind,:),0.1);
 
+AUPRs = full(AUPRs);
+early_AUPRs = full(early_AUPRs);
+max_precision = max([pre1 pre2 pre3 pre4 pre5]);
 plot(recall1,pre1,'b','LineWidth',1.5)
 plot(recall2,pre2,'r','LineWidth',1.5)
 plot(recall3,pre3,'g','LineWidth',1.5)
 plot(recall4,pre4,'c','LineWidth',1.5)
 plot(recall5,pre5,'m','LineWidth',1.5)
 plot(recall4,pre4(end)*ones(size(pre4)),'k--','LineWidth',1.5)
-%plot(.1*ones(11,1),[0:10]'/10,'k-.')
+plot(0.1*ones(10,1),linspace(0,1.1*max_precision,10),'k-.','LineWidth',1.5)
+axis square
+axis([0 1 0 max_precision*1.1]);
 l{1} = sprintf('SINGE (A = %0.2g, E = %0.2g)',AUPRs(1),early_AUPRs(1)*10);
 l{2} = [sprintf('SINCERITIES (A = %0.2g, E = %0.2g)',AUPRs(2),early_AUPRs(2)*10)];
 l{3} = [sprintf('JUMP3 (A = %0.2g, E = %0.2g)',AUPRs(3),early_AUPRs(3)*10)];
 l{4} = [sprintf('SCODE (A = %0.2g, E = %0.2g)',AUPRs(4),early_AUPRs(4)*10)];
 l{5} = [sprintf('GENIE3 (A = %0.2g, E = %0.2g)',AUPRs(5),early_AUPRs(5)*10)];
-l{6} = [sprintf('Baseline Precision = %0.2g',pre4(end))];
-%l{6} = [sprintf('Partial Recall Threshold',pre4(end))];
+l{6} = [sprintf('Baseline Precision = %0.2g',full(pre4(end)))];
+l{7} = [sprintf('Partial Recall Threshold = 0.1')];
 legend(l);
 xlabel('Recall');
 ylabel('Precision');
