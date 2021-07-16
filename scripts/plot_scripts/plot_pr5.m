@@ -1,5 +1,5 @@
 function [AUPRs early_AUPRs] =  plot_pr(truth, ind, metric, SINCERITIES_MAT, ALTJump3, SCODE, Genie3)
-%figure; 
+
 hold on; box on; %axis square;
 truth = truth - diag(diag(truth));
 [pre1,recall1,AUPRs(1),early_AUPRs(1)] = pr_fun(metric(ind,:),truth(ind,:),0.1);

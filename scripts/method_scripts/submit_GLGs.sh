@@ -1,6 +1,5 @@
 #!/bin/bash
-#numrows=$(head -n 1 numrows.txt)
-#numrows2=$(head -n 1 numrows2.txt)
+
 numreplicates=$(head -n 1 replicates.txt)
 DATE=`date +%m/%d/%Y`
 DATEname=`date +%Y%m%d`
@@ -32,4 +31,3 @@ do
 done
 export listname
 condor_submit chtc-submit-GLG.sub
-

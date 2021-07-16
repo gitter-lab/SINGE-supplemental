@@ -17,7 +17,5 @@ axis([0 626*626 -.05 0])
 xticks([1 626^2])
 xticklabels({'1' '391876  '})
 yticks(-0.003-.004*[length(igo)-1:-1:0])
-%yticklabels(flipud(tf(igo(si))))
 xlabel('Outgoing Edge Rank');
-%ylabel('Regulator');
 axis square;

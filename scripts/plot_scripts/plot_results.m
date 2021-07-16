@@ -1,8 +1,8 @@
 % Plot results from the SINGE manuscript.
 %% Figure 3
 % Plots the precision-recall performance of SINGE, SINCERITIES, Jump3,
-% SCODE, and GENIE3 for the Mouse Embryonic Stem Cell to Endoderm Di?
-% erentiation dataset.
+% SCODE, and GENIE3 for the Mouse Embryonic Stem Cell to Endoderm
+% Differentiation dataset.
 load data/Figure3_data
 figure(3); plot_pr5(truth,isc,SINGE,SINCERITIES,Jump3,SCODE,GENIE3);
 %% Figure 4
