@@ -20,8 +20,6 @@ trutharr = [];
 for i = 1:size(truth_matrix,1)*size(truth_matrix,2)
     trutharr = [trutharr truth_matrix(rownum(i),colnum(i))];
 end
-%relevant = find((trutharr<(1e-6*(numcellLines-.1)))|(trutharr>(1e-6*(numcellLines+1))));
-%trutharr(relevant) = trutharr(relevant)>0.5;
 precision = cumsum(trutharr)./cumsum(ones(size(trutharr)));
 recall = cumsum(trutharr)./sum((trutharr));
 dx = diff(recall);
