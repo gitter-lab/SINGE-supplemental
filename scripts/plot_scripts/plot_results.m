@@ -8,7 +8,7 @@ figure(3); plot_pr5(truth,isc,SINGE,SINCERITIES,Jump3,SCODE,GENIE3);
 
 %% Figure 4
 % Plots the precision-recall performance of SINGE, SINCERITIES, Jump3,
-% SCODE, and GENIE3 for the Mouse Retinoic Acid-driven Di?erentiation dataset.
+% SCODE, and GENIE3 for the Mouse Retinoic Acid-driven Differentiation dataset.
 load data/data2_results
 figure(4); plot_pr5(truth,igo,SINGE,SINCERITIES,Jump3,SCODE,GENIE3);
 
