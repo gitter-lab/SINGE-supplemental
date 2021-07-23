@@ -12,11 +12,13 @@ See the main [SINGE repository](https://github.com/gitter-lab/SINGE) for the sof
 
 ## Contents
 - Commands for running network inference algorithms
-- [`dyngen`](dyngen) script and results for simulated gene regulatory networks 
-- [`scripts`](scripts) scripts to prepare the ESCAPE gold standard and evaluate predicted networks 
+- [`dyngen`](dyngen): script and results for simulated gene regulatory networks 
+- [`escape`](escape): scripts to prepare the ESCAPE gold standard
+- [`scripts`](scripts): scripts to execute the methods used in the manuscript and plot the figures in the manuscript
 
 ## Usage documentation of SINGE and other network inference methods
-For network inference from the different methods, we use the following commands:
+For network inference from the different methods, we use the following commands.
+See the [`scripts`](scripts) directory for related scripts.
 
 ### SINGE
 For all datasets in the paper, we first run all GLG tests for each target using 

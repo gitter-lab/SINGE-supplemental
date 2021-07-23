@@ -1,0 +1,2 @@
+MATLAB script and supporting plotting functions to help reproduce results presented in the SINGE manuscript using the intermediate results shared in the folder `data`. 
+`plot_results.m` plots the precision-recall performance of SINGE, SINCERITIES, Jump3, SCODE, and GENIE3 for the Mouse Embryonic Stem Cell to Endoderm Differentiation and Mouse Retinoic Acid Driven Differentiation datasets respectively, followed by the regulator-specific average precision values for all five methods.
