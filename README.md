@@ -14,6 +14,7 @@ See the main [SINGE repository](https://github.com/gitter-lab/SINGE) for the sof
 - Commands for running network inference algorithms
 - [`dyngen`](dyngen): script and results for simulated gene regulatory networks 
 - [`escape`](escape): scripts to prepare the ESCAPE gold standard
+- [`files`](files): supplementary files associated with the manuscript
 - [`scripts`](scripts): scripts to execute the methods used in the manuscript and plot the figures in the manuscript
 
 ## Usage documentation of SINGE and other network inference methods
